@@ -1,6 +1,6 @@
 def send_email(massege = 'Пожалуйста, исправьте задание', recipient = 'urban.student@mail.uk', sender='urban.teacher@mail.uk'):
-    if ((".net") in sender) or ((".com") in sender) or ((".ru") in sender) or (("@") in sender):
-        if ((".net") in recipient) or ((".com") in recipient) or ((".ru") in recipient) or (("@") in recipient):
+    if (("@") in sender) and (((".com") in sender) or ((".ru") in sender) or ((".net") in sender)):
+        if (("@") in recipient) and (((".com") in recipient) or ((".ru") in recipient) or (("@") in recipient)):
             if recipient == sender:
                 print("Нельзя отправить письмо самому себе!")
             elif sender == "university.help@gmail.com":
@@ -12,4 +12,7 @@ def send_email(massege = 'Пожалуйста, исправьте задани�
     else:
         print("Невозможно отправить письмо с адреса", sender, "на адрес", recipient, ".")
 
-send_email()
+send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
+send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
+send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
